@@ -64,7 +64,7 @@ public class _424_LongestRepeatingCharacterReplacement {
             maxFreq: The max frequency of character appears in string.
 
             => To find max Length, we need to find maxFreq character in a substring
-            We will slide a window to find substring and record the total number appear of each character in window
+            We will slide a window to find substring and record the total number appears of each character in window
             Then we compare with maxFreq to update new value.
             IF (Length - maxFreq <= k) => the window is sink => need to shift first index of window
             We need to update count of shifted character, but we do not need to update maxFreq in window
