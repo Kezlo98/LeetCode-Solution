@@ -42,43 +42,53 @@ public class _82_RemoveDuplicatesFromSortedList2 {
 
         ListNode listNode = deleteDuplicates(node1);
 
-        System.out.printf("Result");
+        System.out.printf("Result  ");
+
+        while (listNode != null){
+            System.out.printf(listNode.val + "  ");
+            listNode = listNode.next;
+        }
     }
 
     public static ListNode deleteDuplicates(ListNode head) {
         if(head == null || head.next == null){
             return head;
         }
-        if(head.next.next == null){
-            if (head.val == head.next.val){
-                return null;
+        ListNode resultHead = new ListNode(-101);
+        ListNode curResult = null;
+
+        ListNode prevNode = resultHead;
+        ListNode curNode = head;
+
+        while (curNode != null){
+            if(curNode.val != prevNode.val &&
+            (curNode.next == null || curNode.val != curNode.next.val)){
+                curResult = new ListNode(curNode.val);
+                resultHead.next = curResult;
+            }
+
+            prevNode = curNode;
+            curNode = curNode.next;
+            if(curResult != null){
+                break;
             }
         }
 
-        int prevValue = head.val;
-        head = head.next;
-        while ((prevValue == head.val) || (head.next == null) || (head.val == head.next.val)){
-            prevValue = head.val;
-            head = head.next;
+        if(curResult == null){
+            return resultHead.next;
         }
 
-        ListNode node = new ListNode(-101, head);
-        ListNode firstNode = node.next;
-        ListNode preSecondNode = head;
-        ListNode secondNode = head.next;
-
-        while (secondNode != null) {
-            if (preSecondNode.val != secondNode.val) {
-                if ((secondNode.next == null) || (secondNode.next.val != secondNode.val)) {
-                    firstNode.next = secondNode;
-                    firstNode = firstNode.next;
-                }
+        while (curNode != null){
+            if(curNode.val != prevNode.val &&
+                    (curNode.next == null || curNode.val != curNode.next.val)){
+                curResult.next = new ListNode(curNode.val);
+                curResult = curResult.next;
             }
-
-            preSecondNode = secondNode;
-            secondNode = secondNode.next;
+            prevNode = curNode;
+            curNode = curNode.next;
         }
 
-        return node.next;
+        return resultHead.next;
+
     }
 }
