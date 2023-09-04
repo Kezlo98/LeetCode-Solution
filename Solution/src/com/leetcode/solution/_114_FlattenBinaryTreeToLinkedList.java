@@ -51,8 +51,7 @@ public class _114_FlattenBinaryTreeToLinkedList {
     }
 
     public static void flatten(TreeNode root) {
-        TreeNode leftestNode = flattenToRight(root, null);
-//        flatten(root.right,leftestNode);
+        flattenToRight(root, null);
 
     }
 
@@ -85,8 +84,6 @@ public class _114_FlattenBinaryTreeToLinkedList {
         }
 
         rightestNode = flattenToRight(node.left,rightestNode);
-
-//        flattenToRight(node.right,rightestNode);
 
         if(node.right != null){
             rightestNode.right = node.right;
