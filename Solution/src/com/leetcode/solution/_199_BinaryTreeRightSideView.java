@@ -1,3 +1,5 @@
+package com.leetcode.solution;
+
 import com.leetcode.solution.validateBST.TreeNode;
 
 import java.util.ArrayList;
