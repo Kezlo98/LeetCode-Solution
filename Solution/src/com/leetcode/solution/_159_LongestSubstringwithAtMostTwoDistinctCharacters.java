@@ -27,13 +27,47 @@ https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-charac
   s consists of English letters.
  */
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class _159_LongestSubstringwithAtMostTwoDistinctCharacters {
 
   public static void main (String[] args) {
 
+    System.out.printf("Result: " + lengthOfLongestSubstringTwoDistinct("cacbcaaccbccaccccccbcaba"));
   }
 
   public static int lengthOfLongestSubstringTwoDistinct(String s) {
-    return 0;
+    if(s.length() <= 2){
+      return s.length();
+    }
+    char[] charArray = s.toCharArray();
+    int slow = 0;
+    int fast = 1;
+    Map<Character, Integer> charCount = new HashMap<>();
+    Set<Character> existChar = new HashSet<>();
+    existChar.add(charArray[slow]);
+    charCount.put(charArray[slow], 1);
+
+    int result = 1;
+
+    while (fast < s.length()){
+      Character cur = charArray[fast];
+      charCount.put(cur,charCount.getOrDefault(cur,0) + 1);
+      existChar.add(cur);
+      while (existChar.size() > 2 && charCount.get(charArray[slow]) >= 0){
+        charCount.put(charArray[slow],charCount.get(charArray[slow]) - 1);
+        if(charCount.get(charArray[slow]) == 0){
+          existChar.remove(charArray[slow]);
+        }
+        slow ++;
+      }
+      result = Math.max(result, fast - slow + 1);
+      fast ++;
+    }
+
+    return result;
   }
 }
