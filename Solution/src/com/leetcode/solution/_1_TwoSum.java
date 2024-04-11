@@ -28,9 +28,9 @@ public class _1_TwoSum {
      */
 
     public static void main(String[] args) {
-        int[] nums = {-3, 4, 3, 90};
+        int[] nums = {3,3};
         System.out.println("Result: ");
-        int[] results = twoSum(nums, 0);
+        int[] results = twoSum(nums, 6);
         for (int result : results) {
             System.out.print(result + " ");
         }
@@ -41,8 +41,9 @@ public class _1_TwoSum {
 
         for (int i = 0; i < nums.length; i++) {
             tracking.putIfAbsent(nums[i], i);
-            if (tracking.containsKey(target - nums[i]) && (tracking.get(target - nums[i]) != i)) {
-                return new int[]{tracking.get(target - nums[i]), i};
+            int opposite = target - nums[i];
+            if (tracking.containsKey(opposite) && (tracking.get(opposite) != i)) {
+                return new int[]{tracking.get(opposite), i};
             }
         }
 
