@@ -22,23 +22,8 @@ Constraints:
 1 <= s.length <= 1000
 s consists only of lowercase English letters.
 """
+from com.leetcode.solution._1143_LongestCommonSubsequence import longestCommonSubsequence
 
-
-def longestPalindromeSubseq(s: str) -> int:
-    revert = s[::-1]
-    dp = [[0 for _ in range(len(revert) + 1)] for _ in range(len(s) + 1)]
-
-    for i in range(len(s) - 1, -1, -1):
-        for j in range(len(revert) - 1, -1, -1):
-            if s[i] == revert[j]:
-                dp[i][j] = dp[i + 1][j + 1] + 1
-            else:
-                dp[i][j] = max(dp[i + 1][j], dp[i][j + 1])
-    return dp[0][0]
-
-
-if __name__ == '__main__':
-    print("Result: {}".format(longestPalindromeSubseq("cbbd")))
 
 """
 Solution:
@@ -48,3 +33,13 @@ Solution:
 Time Complexity: O(n)
 Space Complexity: O(n)
 """
+
+
+def longestPalindromeSubseq(s: str) -> int:
+    revert = s[::-1]
+    return longestCommonSubsequence(s, revert)
+
+
+if __name__ == '__main__':
+    print("Result: {}".format(longestPalindromeSubseq("cbbd")))
+
