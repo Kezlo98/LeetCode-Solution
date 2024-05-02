@@ -1,6 +1,6 @@
-package com.leetcode.solution;
+package src.com.leetcode.solution;
 
-import com.leetcode.solution.validateBST.TreeNode;
+import src.com.leetcode.solution.validateBST.TreeNode;
 
 public class _222_CountCompleteTreeNodes {
     /*

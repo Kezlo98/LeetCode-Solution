@@ -1,4 +1,4 @@
-package com.leetcode.solution
+package src.com.leetcode.solution
 
 /*
   You are given a 0-indexed string s that consists of digits from 0 to 9.

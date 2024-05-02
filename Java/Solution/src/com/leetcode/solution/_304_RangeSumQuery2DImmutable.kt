@@ -1,4 +1,4 @@
-package com.leetcode.solution
+package src.com.leetcode.solution
 /*
     Given a 2D matrix matrix, handle multiple queries of the following type:
 

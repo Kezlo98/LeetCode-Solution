@@ -1,4 +1,4 @@
-package com.leetcode.solution
+package src.com.leetcode.solution
 
 /*
     You are given an integer array nums sorted in non-decreasing order.

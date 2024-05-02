@@ -1,4 +1,4 @@
-package com.leetcode.solution.validateBST;
+package src.com.leetcode.solution.validateBST;
 
 public class TreeNode {
 

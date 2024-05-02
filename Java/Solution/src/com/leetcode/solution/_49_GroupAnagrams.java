@@ -1,4 +1,4 @@
-package com.leetcode.solution;
+package src.com.leetcode.solution;
 
 import java.util.*;
 
@@ -48,19 +48,19 @@ public class _49_GroupAnagrams {
     public static List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String, List<String>> tracking = new HashMap<>();
 
-        for (int i = 0; i < strs.length; i++) {
-            String s = strs[i];
-            char[] temp = s.toCharArray();
-            Arrays.sort(temp);
-            s = Arrays.toString(temp);
-            if (tracking.containsKey(s)) {
-                tracking.get(s).add(strs[i]);
-            } else {
-                List<String> index = new ArrayList<>();
-                index.add(strs[i]);
-                tracking.put(s, index);
-            }
+      for (String str : strs) {
+        String s = str;
+        char[] temp = s.toCharArray();
+        Arrays.sort(temp);
+        s = Arrays.toString(temp);
+        if(tracking.containsKey(s)) {
+          tracking.get(s).add(str);
+        } else {
+          List<String> index = new ArrayList<>();
+          index.add(str);
+          tracking.put(s, index);
         }
+      }
 
         return new ArrayList<>(tracking.values());
     }

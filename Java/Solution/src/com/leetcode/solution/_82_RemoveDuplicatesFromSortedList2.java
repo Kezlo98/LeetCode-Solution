@@ -1,4 +1,4 @@
-package com.leetcode.solution;
+package src.com.leetcode.solution;
 
 import javax.swing.*;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.leetcode.solution
+package src.com.leetcode.solution
 /*
     Given an integer array nums, handle multiple queries of the following type:
 

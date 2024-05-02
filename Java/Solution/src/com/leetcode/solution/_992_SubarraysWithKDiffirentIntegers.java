@@ -1,4 +1,4 @@
-package com.leetcode.solution;
+package src.com.leetcode.solution;
 
 /*
   Given an integer array nums and an integer k, return the number of good subarrays of nums.

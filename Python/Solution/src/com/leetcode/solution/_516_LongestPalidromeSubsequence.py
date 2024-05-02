@@ -22,8 +22,8 @@ Constraints:
 1 <= s.length <= 1000
 s consists only of lowercase English letters.
 """
-from com.leetcode.solution._1143_LongestCommonSubsequence import longestCommonSubsequence
-
+from Solution.src.com.leetcode.solution._1143_LongestCommonSubsequence import \
+    longestCommonSubsequence
 
 """
 Solution:

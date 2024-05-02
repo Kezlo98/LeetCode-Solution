@@ -1,4 +1,4 @@
-package com.leetcode.solution;
+package src.com.leetcode.solution;
 
 /*
 https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/description/

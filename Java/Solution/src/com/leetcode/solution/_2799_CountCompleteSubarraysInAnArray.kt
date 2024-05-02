@@ -1,4 +1,4 @@
-package com.leetcode.solution
+package src.com.leetcode.solution
 
 /*
     You are given an array nums consisting of positive integers.

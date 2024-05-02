@@ -1,4 +1,4 @@
-package com.leetcode.solution.topInterviewQuestions;
+package src.com.leetcode.solution.topInterviewQuestions;
 
 public class _28_FindTheIndexOfFirstOccurrenceInAString {
     /*

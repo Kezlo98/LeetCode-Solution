@@ -1,4 +1,4 @@
-package com.leetcode.solution;
+package src.com.leetcode.solution;
 
 public class _153_FindMiniumInRotatedSortedArray {
 

@@ -1,4 +1,4 @@
-package com.leetcode.solution;
+package src.com.leetcode.solution;
 
 public class _2_AddTwoNumbers {
     /*
@@ -24,62 +24,43 @@ public class _2_AddTwoNumbers {
         Output: [8,9,9,9,0,0,0,1]
      */
 
-    public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(
-                9, new ListNode(
-                9, new ListNode(
-                9, new ListNode(
-                9, new ListNode(
-                9, new ListNode(
-                9, new ListNode(
-                9
-        )
-        )
-        )
-        )
-        )
-        )
-        );
+  public static void main (String[] args) {
+    ListNode listNode1 = new ListNode(9, new ListNode(9,
+        new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
 
-        ListNode listNode2 = new ListNode(
-                9, new ListNode(
-                9, new ListNode(
-                9, new ListNode(9)
-        )
-        )
-        );
+    ListNode listNode2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
 
-        ListNode result = addTwoNumbers(listNode1,listNode2);
-        System.out.print("Result:\n");
-        while (result != null){
-            System.out.print(result.val + "\t");
-            result = result.next;
-        }
+    ListNode result = addTwoNumbers(listNode1, listNode2);
+    System.out.print("Result:\n");
+    while (result != null) {
+      System.out.print(result.val + "\t");
+      result = result.next;
     }
+  }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int remember = (l1.val + l2.val) / 10;
-        ListNode result = new ListNode((l1.val + l2.val) % 10);
-        ListNode resultNext = result;
-        ListNode next1 = l1.next;
-        ListNode next2 = l2.next;
-        while (next1 != null || next2 != null) {
-            int val = remember;
-            if (next1 != null) {
-                val += next1.val;
-                next1 = next1.next;
-            }
-            if (next2 != null) {
-                val += next2.val;
-                next2 = next2.next;
-            }
-            remember = val / 10;
-            resultNext.next = new ListNode(val % 10);
-            resultNext = resultNext.next;
-        }
-        if (remember != 0) {
-            resultNext.next = new ListNode(remember);
-        }
-        return result;
+  public static ListNode addTwoNumbers (ListNode l1, ListNode l2) {
+    int remember = (l1.val + l2.val) / 10;
+    ListNode result = new ListNode((l1.val + l2.val) % 10);
+    ListNode resultNext = result;
+    ListNode next1 = l1.next;
+    ListNode next2 = l2.next;
+    while (next1 != null || next2 != null) {
+      int val = remember;
+      if(next1 != null) {
+        val += next1.val;
+        next1 = next1.next;
+      }
+      if(next2 != null) {
+        val += next2.val;
+        next2 = next2.next;
+      }
+      remember = val / 10;
+      resultNext.next = new ListNode(val % 10);
+      resultNext = resultNext.next;
     }
+    if(remember != 0) {
+      resultNext.next = new ListNode(remember);
+    }
+    return result;
+  }
 }
