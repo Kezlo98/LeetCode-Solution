@@ -29,7 +29,20 @@ Constraints:
 
 Follow up: If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log(n)).
 """
-from turtledemo.rosette import mn_eck
+
+"""
+Solution: 
+  Sliding window technique:
+    - We will have a window that contains the subarray that has the sum >= target
+    - We will have 2 pointers, first_index and i
+    - We will increase i until the sum of the subarray is >= target
+    - When the sum of the subarray is >= target, we will decrease the window size by increasing first_index
+    - We will keep track of the minimum range of the subarray
+    - We will return 0 if the minimum range is not changed
+    - Time complexity: O(N)
+    - Space complexity: O(1)
+"""
+
 from typing import List
 
 

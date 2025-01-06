@@ -49,20 +49,20 @@ Space Complexity: O(1)
 from typing import List
 
 
-def maxProduct(nums: List[int]) -> int:
+def max_product(nums: List[int]) -> int:
     res = max(nums)
-    curMax, curMin = 1, 1
+    cur_max, cur_min = 1, 1
 
     for num in nums:
         if num == 0:
-            curMax, curMin = 1, 1
+            cur_max, cur_min = 1, 1
             continue
-        temp = num * curMax
-        curMax = max(num, temp, num * curMin)
-        curMin = min(num, temp, num * curMin)
-        res = max(curMax, res)
+        temp = num * cur_max
+        cur_max = max(num, temp, num * cur_min)
+        cur_min = min(num, temp, num * cur_min)
+        res = max(cur_max, res)
     return res
 
 
 if __name__ == '__main__':
-    print("Result: ", maxProduct([2, 3, -2, 4]))
+    print("Result: ", max_product([2, 3, -2, 4]))
