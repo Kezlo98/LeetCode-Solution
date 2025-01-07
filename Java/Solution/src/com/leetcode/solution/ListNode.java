@@ -21,4 +21,14 @@ public class ListNode {
             curNode = curNode.next;
         }
     }
+
+    public static ListNode createListNode(int[] arr){
+        ListNode dummy = new ListNode(-1);
+        ListNode curNode = dummy;
+        for (int i : arr){
+            curNode.next = new ListNode(i);
+            curNode = curNode.next;
+        }
+        return dummy.next;
+    }
 }
